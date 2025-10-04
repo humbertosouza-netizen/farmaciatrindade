@@ -1,13 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { Search, MessageCircle, Star, Navigation } from "lucide-react";
+import { MessageCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { generateWhatsAppLink } from "@/lib/utils";
-import { searchOffers } from "@/lib/offers";
 
 interface HeroProps {
   phone: string;
@@ -15,18 +11,6 @@ interface HeroProps {
 }
 
 export function Hero({ phone, whatsappMessage }: HeroProps) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    if (query.length > 2) {
-      const results = searchOffers(query);
-      setSearchResults(results.slice(0, 5));
-    } else {
-      setSearchResults([]);
-    }
-  };
 
   return (
     <section className="relative bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-24 overflow-hidden">

@@ -1,8 +1,8 @@
 // Google Analytics 4 e Google Ads tracking
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
-    dataLayer: any[];
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
   }
 }
 
@@ -49,7 +49,7 @@ export const initializeGA4 = (measurementId: string) => {
 };
 
 // Event tracking functions
-export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
   if (typeof window === 'undefined') return;
 
   window.gtag?.('event', eventName, {
@@ -188,7 +188,7 @@ export const generatePhoneLinkWithTracking = (phone: string) => {
 };
 
 // Send beacon for telemetry
-export const sendBeacon = (event: string, data: Record<string, any>) => {
+export const sendBeacon = (event: string, data: Record<string, unknown>) => {
   if (typeof window === 'undefined') return;
 
   const payload = {

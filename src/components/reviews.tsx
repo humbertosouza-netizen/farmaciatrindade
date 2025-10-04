@@ -113,7 +113,7 @@ export function Reviews() {
 
                   {/* Review text */}
                   <p className="text-neutral-700 mb-6 leading-relaxed">
-                    "{review.text}"
+                    &ldquo;{review.text}&rdquo;
                   </p>
 
                   {/* Author */}

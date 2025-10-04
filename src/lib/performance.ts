@@ -76,10 +76,10 @@ export const initializePerformanceMonitoring = () => {
         console.log('LCP:', entry.startTime);
       }
       if (entry.entryType === 'first-input') {
-        console.log('FID:', entry.processingStart - entry.startTime);
+        console.log('FID:', (entry as PerformanceEntry & { processingStart: number }).processingStart - entry.startTime);
       }
       if (entry.entryType === 'layout-shift') {
-        console.log('CLS:', (entry as any).value);
+        console.log('CLS:', (entry as PerformanceEntry & { value: number }).value);
       }
     });
   });
@@ -98,15 +98,12 @@ export const optimizeBundleSize = () => {
 
   // Dynamic imports for non-critical components
   const loadNonCriticalComponents = async () => {
-    if (window.innerWidth > 768) {
-      // Load desktop-specific components
-      const { default: DesktopComponent } = await import('@/components/desktop-specific');
-      return DesktopComponent;
-    }
+    // Dynamic loading can be implemented here
+    return null;
   };
 
   // Load components when needed
-  const loadOnInteraction = (selector: string, importFn: () => Promise<any>) => {
+  const loadOnInteraction = (selector: string, importFn: () => Promise<unknown>) => {
     const element = document.querySelector(selector);
     if (element) {
       element.addEventListener('mouseenter', importFn, { once: true });

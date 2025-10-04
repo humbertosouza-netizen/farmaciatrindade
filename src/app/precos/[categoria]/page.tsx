@@ -75,7 +75,7 @@ export default function CategoriaPage({ params }: CategoriaPageProps) {
 
   const products = kw.categorias[categoria as keyof typeof kw.categorias];
   const offers = getHighlightedOffers().filter(offer => 
-    offer.categoria.toLowerCase().includes(categoria.toLowerCase())
+    offer.category.toLowerCase().includes(categoria.toLowerCase())
   );
 
   const contactData = {
@@ -251,28 +251,28 @@ export default function CategoriaPage({ params }: CategoriaPageProps) {
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <h3 className="font-heading font-semibold text-neutral-900 text-lg">
-                          {offer.nome}
+                          {offer.name}
                         </h3>
-                        {offer.desconto > 0 && (
+                        {offer.discount > 0 && (
                           <Badge variant="destructive" className="bg-accent text-white">
-                            -{offer.desconto}%
+                            -{offer.discount}%
                           </Badge>
                         )}
                       </div>
                       
                       <div className="flex items-center space-x-2 mb-4">
                         <span className="text-2xl font-bold text-primary">
-                          {formatPrice(offer.precoPor)}
+                          {formatPrice(offer.priceTo)}
                         </span>
-                        {offer.precoDe && (
+                        {offer.priceFrom && (
                           <span className="text-lg text-neutral-500 line-through">
-                            {formatPrice(offer.precoDe)}
+                            {formatPrice(offer.priceFrom)}
                           </span>
                         )}
                       </div>
                       
                       <p className="text-neutral-600 mb-4">
-                        {offer.categoria} • {offer.isGenerico ? 'Genérico' : 'Referência'}
+                        {offer.category} • {offer.isGenerico ? 'Genérico' : 'Referência'}
                       </p>
                       
                       <div className="flex gap-2">
@@ -281,7 +281,7 @@ export default function CategoriaPage({ params }: CategoriaPageProps) {
                           className="bg-accent hover:bg-accent-dark text-white flex-1"
                           asChild
                         >
-                          <a href={generateWhatsAppLink(contactData.phone, `Quero preço de ${offer.nome}`)}>
+                          <a href={generateWhatsAppLink(contactData.phone, `Quero preço de ${offer.name}`)}>
                             <MessageCircle className="h-4 w-4 mr-2" />
                             Consultar
                           </a>

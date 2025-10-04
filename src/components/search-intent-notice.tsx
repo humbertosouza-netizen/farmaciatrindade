@@ -46,7 +46,7 @@ export function SearchIntentNotice({
           <Search className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
           <div className="flex-1">
             <h3 className="font-medium text-neutral-900 mb-1">
-              Você buscou por "{searchTerm}"
+              Você buscou por &ldquo;{searchTerm}&rdquo;
             </h3>
             <p className="text-sm text-neutral-600 mb-3">
               Encontre o que precisa com o melhor preço de São Gonçalo. 
