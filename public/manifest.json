@@ -1,0 +1,23 @@
+{
+  "name": "Drogarias Legítima Trindade",
+  "short_name": "Legítima Trindade",
+  "description": "O melhor preço de São Gonçalo. Medicamentos, genéricos e perfumaria com entrega rápida.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2A2F85",
+  "icons": [
+    {
+      "src": "/images/logotrindade.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logotrindade.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
