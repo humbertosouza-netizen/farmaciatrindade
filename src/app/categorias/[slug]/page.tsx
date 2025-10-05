@@ -144,7 +144,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                           </Badge>
                         )}
                         {offer.isHighlighted && (
-                          <Badge variant="success" className="text-xs">
+                          <Badge variant="default" className="text-xs">
                             DESTAQUE
                           </Badge>
                         )}

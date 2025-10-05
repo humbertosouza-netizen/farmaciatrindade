@@ -13,7 +13,7 @@ const badgeVariants = cva(
         outline: "text-neutral-950",
         success: "border-transparent bg-success text-white hover:bg-success/90",
         price: "border-transparent bg-accent text-white hover:bg-accent-dark",
-        discount: "border-transparent bg-warning text-white hover:bg-warning/90",
+        discount: "border-transparent bg-accent text-white hover:bg-accent-dark",
         generico: "border-transparent bg-neutral-800 text-white hover:bg-neutral-900",
       },
     },

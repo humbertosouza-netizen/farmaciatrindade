@@ -161,7 +161,7 @@ export default function OfertasPage() {
                           </Badge>
                         )}
                         {offer.isHighlighted && (
-                          <Badge variant="success" className="text-xs">
+                          <Badge variant="default" className="text-xs">
                             DESTAQUE
                           </Badge>
                         )}
