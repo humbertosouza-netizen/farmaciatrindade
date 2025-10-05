@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MessageCircle, Phone, Star, Shield, Truck, Clock } from 'lucide-react';
 import { generateWhatsAppLink, generateTelLink } from '@/lib/utils';
+import Image from 'next/image';
+import { offers } from '@/lib/offers';
 
 interface ProdutoPageProps {
   params: {
@@ -94,6 +96,9 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
     }
   }
 
+  // Match offer to get image when available
+  const matchedOffer = offers.find(o => o.slug === params.produto);
+
   const contactData = {
     phone: "21981471332",
     whatsappMessage: `Olá! Vim pelo site da Drogarias Legítima e gostaria de saber mais sobre os produtos e ofertas.`,
@@ -110,7 +115,7 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
   const productData = {
     nome: foundProduct,
     slug: params.produto,
-    imagem: '/images/placeholder-product.jpg',
+    imagem: matchedOffer?.image || '/images/placeholder-product.jpg',
     precoPor: 15.90,
     precoDe: 22.90,
     categoria: categoria.charAt(0).toUpperCase() + categoria.slice(1),
@@ -194,6 +199,16 @@ export default function ProdutoPage({ params }: ProdutoPageProps) {
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Product Image */}
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+                <Image
+                  src={productData.imagem}
+                  alt={produto}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
               {/* Product Info */}
               <div>
                 <div className="mb-6">

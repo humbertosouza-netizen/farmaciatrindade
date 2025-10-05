@@ -198,7 +198,7 @@ export const offers: Offer[] = [
     name: "Ácido Acetil Salicílico EMS",
     slug: "acido-acetil-salicilico-ems",
     category: "genericos",
-    image: "/images/acido-acetil-salicilico-ems.png",
+    image: "/images/acidoacetilsalicílicoEMS.png",
     priceFrom: 6.99,
     priceTo: 6.99,
     discount: 0,
