@@ -1,5 +1,3 @@
-import React from "react";
-
 export const metadata = {
   title: "Política de Privacidade - Drogarias Legitima Trindade",
   description:
